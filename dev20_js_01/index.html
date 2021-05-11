@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Janken</title>
+</head>
+
+<body>
+
+    <div>目指せ億り人！最初は１０万円。ビットコイン価格、どうなる？</div>
+    <div id="ex">10</div>
+    <button id="show">上がる</button>
+    <button id="low">下がる</button>
+    <button id="low">ヨコヨコ</button>
+
+    <!-- js/test.jsの読み込みを行う -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script> 
+    $(function(){
+        var z = 10
+        $("#show").click(function(){
+            var random = Math.floor(Math.random() * 2);
+            if(random === 0){
+            z *=10;
+            $("#ex").text(z);
+            }
+            if(random === 1){
+            z *=0;
+            $("#ex").text('破産（トライアゲイン）');
+            }
+        })
+    })
+    $(function(){
+        var z = 10
+        $("#low").click(function(){
+            var random = Math.floor(Math.random() * 2);
+            if(random === 0){
+            z *=0;
+            $("#ex").text('破産（トライアゲイン）');
+            }
+            if(random === 1){
+            $("#ex").text('破産（トライアゲイン）');
+            }
+        })
+    })
+</script>
+<script src="js/test.js"></script>
+
+    
+ 
+
+
+</body>
+
+</html>
