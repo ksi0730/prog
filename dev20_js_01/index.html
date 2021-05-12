@@ -30,8 +30,8 @@
     <!-- js/test.jsの読み込みを行う -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script> 
+        var z= 10
     $(function(){
-        var z = 10
         $("#show").click(function(){
             var random = Math.floor(Math.random() * 2);
             if(random === 0){
@@ -39,41 +39,63 @@
             $("#ex").text(z);
             }
             if(random === 1){
-            z *=1/2;
+            z *=20;
             $("#ex").text(z);
             }
+            if(z > 10000){
+            z *=0;
+        　　 $("#ex").text("ムーン！（貴方は億り人）");
+        　　 }
+            if(z < 0){
+            z *=0;
+        　　 $("#ex").text("破産！（トライアゲイン）");
+        　　 }
         })
     })
     $(function(){
-        var z = 10
         $("#sell").click(function(){
             var random = Math.floor(Math.random() * 2);
             if(random === 0){
-            z *=30;
+            z +=100;
             $("#ex").text(z);
             }
             if(random === 1){
-            z *=0;
-            $("#ex").text("破産（トライアゲイン）");
+            z +=-100;
+            $("#ex").text(z);
             }
+            if(z > 10000){
+            z *=0;
+        　　 $("#ex").text("ムーン！（貴方は億り人）");
+        　　 }
+        　　 if(z < 0){
+            z *=0;
+        　　 $("#ex").text("破産！（トライアゲイン）");
+        　　 }
         })
     })
     $(function(){
-        var z = 10
         $("#low").click(function(){
             var random = Math.floor(Math.random() * 3);
             if(random === 0){
-            z +=50;
+            z +=100;
             $("#ex").text(z);
             }
             if(random === 1){
-            z -=50;
+            z +=50;
             $("#ex").text(z);
             }
             if(random === 2){
-            z *=50;
-            $("#ex").text("破産（トライアゲイン）");
+            z *=0;
+            $("#ex").text("破産！（トライアゲイン）");
             }
+            if(z > 10000){
+            z *=0;
+        　　 $("#ex").text("ムーン！（貴方は億り人）");
+        　　 }
+            if(z < 0){
+            z *=0;
+        　　 $("#ex").text("破産！（トライアゲイン）");
+        　　 }
         })
     })
 </script>
