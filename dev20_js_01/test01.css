@@ -1,0 +1,64 @@
+.section {
+    width: 100%;
+}
+
+.section-content {
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 40px 60px;
+    text-align: center;
+}
+
+.top {
+    position: relative;
+}
+
+.top .top1 {
+    position: absolute;
+    font-size: 48px;
+    top: 300px;
+    left: 15%;
+    color: white;
+    background-color: black;
+}
+
+.top2 {
+    position: absolute;
+    font-size: 48px;
+    top: 100px;
+    left: 35%;
+    color: white;
+    background-color: black;
+}
+
+.top2 p {
+    float: left;
+}
+
+.top3 {
+    position: absolute;
+    top: 520px;
+    left: 35%;
+}
+
+#show {
+    width: 150px;
+    height: 70px;
+    background-color: darkgoldenrod;
+}
+
+#sell {
+    width: 150px;
+    height: 70px;
+    background-color: darkgoldenrod;
+}
+
+#low {
+    width: 150px;
+    height: 70px;
+    background-color: darkgoldenrod;
+}
+
+#ex {
+    color: darkgoldenrod;
+}

@@ -4,16 +4,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="test01.css">
     <title>Janken</title>
 </head>
 
 <body>
 
-    <div>目指せ億り人！最初は１０万円。ビットコイン価格、どうなる？</div>
-    <div id="ex">10</div>
-    <button id="show">上がる</button>
-    <button id="low">下がる</button>
-    <button id="low">ヨコヨコ</button>
+    <div class="top">
+    <img src="img/beeple2.png" width="100%" height="800px">
+    <p class="top1">目指せ億り人！ビットコイン価格、どうなる？</p>
+    </div>
+
+    <div class="top2">
+    <p>あなたの資産</p>
+    <p  id="ex">10</p>
+    <p>万円</p>
+    </div>
+
+    <div class="top3" style="text-align: center;">
+    <button id="show">上がる<br>(レバレッジ１０倍)</button>
+    <button id="sell">下がる<br>(空売り)</button>
+    <button id="low">ヨコヨコ<br>(ホールド)</button>
+    </div>
 
     <!-- js/test.jsの読み込みを行う -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -27,21 +39,40 @@
             $("#ex").text(z);
             }
             if(random === 1){
+            z *=1/2;
+            $("#ex").text(z);
+            }
+        })
+    })
+    $(function(){
+        var z = 10
+        $("#sell").click(function(){
+            var random = Math.floor(Math.random() * 2);
+            if(random === 0){
+            z *=30;
+            $("#ex").text(z);
+            }
+            if(random === 1){
             z *=0;
-            $("#ex").text('破産（トライアゲイン）');
+            $("#ex").text("破産（トライアゲイン）");
             }
         })
     })
     $(function(){
         var z = 10
         $("#low").click(function(){
-            var random = Math.floor(Math.random() * 2);
+            var random = Math.floor(Math.random() * 3);
             if(random === 0){
-            z *=0;
-            $("#ex").text('破産（トライアゲイン）');
+            z +=50;
+            $("#ex").text(z);
             }
             if(random === 1){
-            $("#ex").text('破産（トライアゲイン）');
+            z -=50;
+            $("#ex").text(z);
+            }
+            if(random === 2){
+            z *=50;
+            $("#ex").text("破産（トライアゲイン）");
             }
         })
     })
