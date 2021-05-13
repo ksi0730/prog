@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="test01.css">
+    <title>Janken</title>
+</head>
+
+<body>
+
+    <div class="top">
+    <img src="img/back.png" width="100%" height="800px">
+    </div>
+
+    <div class="top2">
+    <p>ピカチュウのHP</p>
+    <p  id="fx">100</p>
+    </div>
+
+    <div class="pic1">
+    <img src="img/pika.png">
+    </div>
+
+    <div class="top5">
+    <p>ギャラドスのHP</p>
+    <p  id="ex">200</p>
+    </div>
+
+    <div class="pic2">
+    <img src="img/gyara.png">
+    </div>
+
+    <div class="top6">
+    <p  id="gx">ピカチュウのターン！</p>
+    </div>
+
+    <div class="top3" style="text-align: center;">
+    <button id="show">ノーマル</button>
+    <button id="sell">かみなり</button>
+    <button id="low">お昼寝</button>
+    </div>
+
+    <audio src="img/pk_gym (1).mp3" id="play-button"></audio>
+
+    <!-- js/test.jsの読み込みを行う -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script> 
+        var y= 100
+        var z= 200
+    $(function(){
+        $("#show").click(function(){
+            var random = Math.floor(Math.random() * 5);
+            if(random === 0){
+            z -=10;
+            $("#ex").text(z);
+            $("#gx").text("ピカチュウのパンチ");
+            }
+            if(random === 1){
+            z -=0;
+            $("#ex").text(z);
+            y -=10;
+            $("#fx").text(y);
+            $("#gx").text("ギャラドスのカウンター");
+            }
+            if(random === 2){
+            z -=20;
+            $("#ex").text(z);
+            $("#gx").text("ピカチュウのキック");
+            }
+            if(random === 3){
+            z -=15;
+            $("#ex").text(z);
+            $("#gx").text("ピカチュウのフック");
+            }
+            if(random === 4){
+            y -=15;
+            $("#fx").text(y);
+            $("#gx").text("ギャラドスのハイドロポンプ");
+            }
+            if(y < 0){
+            z *=0;
+        　　 $("#fx").text("負け");
+        　　 }
+            if(z < 0){
+            z *=0;
+        　　 $("#fx").text("勝利！");
+        　　 }
+        })
+    })
+    $(function(){
+        $("#sell").click(function(){
+            var random = Math.floor(Math.random() * 4);
+            if(random === 0){
+            z -=20;
+            $("#ex").text(z);
+            $("#gx").text("ピカチュウのかみなり");
+            }
+            if(random === 1){
+            z -=50;
+            $("#ex").text(z);
+            $("#gx").text("効果は抜群だ");
+            }
+            if(random === 2){
+            y -=50;
+            $("#fx").text(y);
+            $("#gx").text("ギャラドスの破壊光線");
+            }
+            if(random === 3){
+            y -=0;
+            $("#fx").text(y);
+            $("#gx").text("Miss!");
+            }
+            if(y < 0){
+            z *=0;
+        　　 $("#fx").text("負け");
+        　　 }
+        　　 if(z < 0){
+            z *=0;
+        　　 $("#fx").text("勝利！");
+        　　 }
+        })
+    })
+    $(function(){
+        $("#low").click(function(){
+            var random = Math.floor(Math.random() * 3);
+            if(random === 0){
+            y +=30;
+            $("#fx").text(y);
+            $("#gx").text("ピカチュウはよく寝た");
+            }
+            if(random === 1){
+            y -=0;
+            $("#fx").text(y);
+            $("#gx").text("ギャラドスは踊った");
+            }
+            if(random === 2){
+            y -=15;
+            $("#fx").text(y);
+            $("#gx").text("ギャラドスの噛み付く");
+            }
+            if(y < 0){
+            z *=0;
+        　　 $("#fx").text("負け");
+        　　 }
+            if(z < 0){
+            z *=0;
+        　　 $("#fx").text("勝利！");
+        　　 }
+        })
+    })
+</script>
+<script src="js/test.js"></script>
+
+    
+ 
+
+
+</body>
+
+</html>

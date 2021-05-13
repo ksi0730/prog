@@ -1,0 +1,33 @@
+.section {
+    width: 100%;
+}
+
+.section-content {
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 40px 60px;
+    text-align: center;
+}
+
+.top {
+    position: relative;
+}
+
+.top .top1 {
+    position: absolute;
+    font-size: 48px;
+    top: 300px;
+    left: 33%;
+    color: black;
+    background-color: yellow;
+}
+
+.top2 {
+    position: absolute;
+    font-size: 48px;
+    top: 600px;
+    left: 43%;
+    color: white;
+    background-color: yellow;
+}
+

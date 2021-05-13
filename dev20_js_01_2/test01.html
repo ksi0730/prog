@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="test02.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollify/1.0.19/jquery.scrollify.min.js"></script>
+    <script src="main.js" charset="utf-8"></script>
+    <title>Pokemon-1</title>
+</head>
+<body>
+    <section class="section section-gree js-section" data-section-name="section1">
+        <div class="top">
+          <img src="img/head.png" width="100%" height="800px">
+          <p class="top1">ピカチュウvsギャラドス</p>
+          <button class="top2"><a href="index.html" target="_blank">はじめる</a></button>
+        </div>
+      </section>
+    
+      <audio src="img/pk_gym (1).mp3" id="play-button"></audio>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  
+    <script>
+      $(function(){
+        $(".top2").click(function(){
+          $("#play-button").get(0).play();
+        })
+      })
+    </script>  
+
+</body>
+</html>
