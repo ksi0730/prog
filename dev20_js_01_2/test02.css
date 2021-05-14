@@ -24,10 +24,13 @@
 
 .top2 {
     position: absolute;
-    font-size: 48px;
-    top: 600px;
-    left: 43%;
+    font-size: 36px;
+    top: 650px;
+    left: 71%;
     color: white;
-    background-color: yellow;
 }
 
+a {
+    color: white;
+    text-decoration: none;
+  }

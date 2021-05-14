@@ -7,16 +7,16 @@
     <link rel="stylesheet" href="test02.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollify/1.0.19/jquery.scrollify.min.js"></script>
-    <script src="main.js" charset="utf-8"></script>
+    <script src="test.js" charset="utf-8"></script>
     <title>Pokemon-1</title>
 </head>
 <body>
     <section class="section section-gree js-section" data-section-name="section1">
         <div class="top">
           <img src="img/head.png" width="100%" height="800px">
-          <p class="top1">ピカチュウvsギャラドス</p>
-          <button class="top2"><a href="index.html" target="_blank">はじめる</a></button>
+          <div class="top2"><a href="index.html" target="_blank">Pikachu vs Gyarados</a></div>
         </div>
+
       </section>
     
       <audio src="img/pk_gym (1).mp3" id="play-button"></audio>
@@ -29,6 +29,13 @@
           $("#play-button").get(0).play();
         })
       })
+      $(function() {
+　　　 //マウスを乗せたら発動
+ 　　　$(".top2").hover(function() {
+   　　//マウスを乗せたら色が変わる
+   　　$(this).css('background', '#c00');
+　　　　 });
+　　　　});
     </script>  
 
 </body>

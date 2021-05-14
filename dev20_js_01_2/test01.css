@@ -19,7 +19,6 @@
     top: 300px;
     left: 15%;
     color: white;
-    background-color: black;
 }
 
 .top2 {
@@ -27,8 +26,7 @@
     font-size: 34px;
     top: 100px;
     left: 15%;
-    color: white;
-    background-color: black;
+    color:black;
 }
 
 .top2 p {
@@ -40,8 +38,7 @@
     font-size: 34px;
     top: 100px;
     left: 65%;
-    color: white;
-    background-color: black;
+    color: black;
 }
 
 .top5 p {
@@ -53,8 +50,7 @@
     font-size: 34px;
     top: 500px;
     left: 40%;
-    color: white;
-    background-color: black;
+    color: black;
 }
 
 .top3 {
