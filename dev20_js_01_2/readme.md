@@ -13,6 +13,6 @@
 ## ④その他（感想、シェアしたいことなんでも）
 - javascriptについての知識をもう少し深めたいと思いました。
 
-<img width="550" height="300" alt="gamen" src="https://user-images.githubusercontent.com/8785925/118342953-cade8280-b560-11eb-9fdb-23aaceb0732e.png">
+![image (1)](https://user-images.githubusercontent.com/8785925/118343259-d2069000-b562-11eb-8f5b-4898d888e4bd.png)
 
 
