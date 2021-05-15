@@ -58,7 +58,7 @@
         var z= 200
     $(function(){
         $("#show").click(function(){
-            var random = Math.floor(Math.random() * 3);
+            var random = Math.floor(Math.random() * 2);
             if(random === 0){
             z -=10;
             $("#ex").text(z);
@@ -71,41 +71,32 @@
             z -=0;
             $("#ex").text(z);
             $("#gx").text("ピカチュウは外した");
+            $("#gx").delay(300).queue(function(){
             y -=20;
-            $("#fx").delay(1000).text(y);
-            $("#gx").delay(1000).text("ギャラドスの反撃");
-            $(".pic2").animate({left: "-=5%"}, 600);
-            $(".pic2").animate({left: "+=5%"}, 600);
-            $(".pic1").fadeOut(200)
-            $(".pic1").fadeIn(200)
-            $("#play-button").get(0).play();
-            }
-            if(random === 2){
-            z -=30;
-            $("#ex").text(z);
-            $("#gx").text("ピカチュウのキック");
-            $(".pic2").fadeOut(200)
-            $(".pic2").fadeIn(200)
-            $("#play-button2").get(0).play();
+            if(y > 0){
+            $("#fx").text(y).dequeue();
+            $("#gx").text("ギャラドスの反撃").dequeue();
+            $(".pic2").animate({left: "-=5%"}, 500);
+            $(".pic2").animate({left: "+=5%"}, 500);
+            $(".pic1").fadeOut(200);
+            $(".pic1").fadeIn(200);
+            $("#play-button").get(0).play().dequeue();
             }
             if(y <= 0){
         　　 $("#fx").text("負け");
             $(".pic1").fadeOut(200)
+            $(".pic2").animate({left: "-=5%"}, 600);
+            $(".pic2").animate({left: "+=5%"}, 600);
             $("#gx").text("目の前が真っ暗になった…");
-        　　 }
-            if(z <= 0){
-            z *=0;
-        　　 $("#fx").text("勝利！");
-            $("#ex").text("気絶");
-            $(".pic2").fadeOut(200)
-            $("#play-button6").get(0).play();
-            $("#gx").text("ギャラドスを捕まえた！");
-        　　 }
-        })
-    })
+            $("#play-button").get(0).play().dequeue();
+            }
+            });
+            }
+        });
+    });
     $(function(){
         $("#sell").click(function(){
-            var random = Math.floor(Math.random() * 3);
+            var random = Math.floor(Math.random() * 2);
             if(random === 0){
             z -=30;
             $("#ex").text(z);
@@ -115,19 +106,13 @@
             $("#play-button3").get(0).play();
             }
             if(random === 1){
-            z -=60;
             $("#ex").text(z);
-            $("#gx").text("急所に当たった！！！");
-            $(".pic2").fadeOut(200)
-            $(".pic2").fadeIn(200)
-            $(".pic2").fadeOut(200)
-            $(".pic2").fadeIn(200)
-            $("#play-button3").get(0).play();
-            }
-            if(random === 2){
-            y -=50;
-            $("#fx").text(y);
-            $("#gx").text("ギャラドスの破壊光線");
+            $("#gx").text("ピカチュウは外した");
+            $("#gx").delay(300).queue(function(){
+            y -=40;
+            if(y > 0){
+            $("#fx").text(y).dequeue();
+            $("#gx").text("ギャラドスの破壊光線").dequeue();
             $(".pic2").animate({left: "-=5%"}, 600);
             $(".pic2").animate({left: "+=5%"}, 600);
             $(".pic1").fadeOut(200)
@@ -137,10 +122,15 @@
             $("#play-button4").get(0).play();
             }
             if(y <= 0){
-        　　 $("#fx").text("負け");
-        　　 $(".pic1").fadeOut(200)
-        　　 $("#gx").text("目の前が真っ暗になった…");
+            $("#fx").text("負け");
+            $(".pic1").fadeOut(200)
+            $(".pic2").animate({left: "-=5%"}, 600);
+            $(".pic2").animate({left: "+=5%"}, 600);
+            $("#gx").text("目の前が真っ暗になった…");
+            $("#play-button").get(0).play().dequeue();
         　　 }
+        　　 });
+            }
         　　 if(z <= 0){
             z *=0;
         　　 $("#fx").text("勝利！");
@@ -163,20 +153,109 @@
             $("#play-button5").get(0).play();
             }
             if(random === 1){
-            z +=50;
-            $("#ex").text(z);
-            $("#gx").text("ギャラドスは踊った");
-            $(".pic2").animate({left: "-=5%"}, 600);
-            $(".pic2").animate({left: "+=5%"}, 600);
-            $("#play-button4").get(0).play();
+            $("#gx").text("ピカチュウのコンボ");
+            $("#play-button5").get(0).play();
+            $("#gx").delay(300).queue(function(){
+            z -=30;
+            $("#ex").text(z).dequeue();
+            $("#gx").text("ピカチュウのパンチ").dequeue();
+            $(".pic1").animate({left: "+=5%"}, 150);
+            $(".pic1").animate({left: "-=5%"}, 150);
+            $(".pic2").fadeOut(150);
+            $(".pic2").fadeIn(150);
+            if(z <= 0){
+        　　 $("#fx").text("勝利！");
+            $("#ex").text("気絶");
+            $(".pic2").fadeOut(200)
+            $("#play-button6").get(0).play();
+            $("#gx").text("ギャラドスを捕まえた！");
+        　　 }
+       　　  });
+            $("#gx").delay(600).queue(function(){
+            z -=30;
+            $("#ex").text(z).dequeue();
+            $("#gx").text("ピカチュウのフック").dequeue();
+            $(".pic1").animate({left: "+=5%"}, 150);
+            $(".pic1").animate({left: "-=5%"}, 150);
+            $(".pic2").fadeOut(150);
+            $(".pic2").fadeIn(150);
+            if(z <= 0){
+        　　 $("#fx").text("勝利！");
+            $("#ex").text("気絶");
+            $(".pic2").fadeOut(200)
+            $("#play-button6").get(0).play();
+            $("#gx").text("ギャラドスを捕まえた！");
+            }
+            });
+            $("#gx").delay(900).queue(function(){
+            z -=30;
+            $("#ex").text(z).dequeue();
+            $("#gx").text("ピカチュウの頭突き").dequeue();
+            $(".pic1").animate({left: "+=5%"}, 100);
+            $(".pic1").animate({left: "-=5%"}, 100);
+            $(".pic2").fadeOut(100);
+            $(".pic2").fadeIn(100);
+            if(z <= 0){
+        　　 $("#fx").text("勝利！");
+            $("#ex").text("気絶");
+            $(".pic2").fadeOut(200)
+            $("#play-button6").get(0).play();
+            $("#gx").text("ギャラドスを捕まえた！");
+            }
+            });
+            $("#gx").delay(1100).queue(function(){
+            z -=30;
+            $("#ex").text(z).dequeue();
+            $("#gx").text("ピカチュウの膝蹴り").dequeue();
+            $(".pic1").animate({left: "+=5%"}, 100);
+            $(".pic1").animate({left: "-=5%"}, 100);
+            $(".pic2").fadeOut(100);
+            $(".pic2").fadeIn(100);
+            if(z <= 0){
+        　　 $("#fx").text("勝利！");
+            $("#ex").text("気絶");
+            $(".pic2").fadeOut(200)
+            $("#play-button6").get(0).play();
+            $("#gx").text("ギャラドスを捕まえた！");
+            }
+            });
+            $("#gx").delay(1200).queue(function(){
+            z -=30;
+            $("#ex").text(z).dequeue();
+            $("#gx").text("ピカチュウのアッパー").dequeue();
+            $(".pic1").animate({top: "-=55px"}, 100);
+            $(".pic1").animate({top: "+=55px"}, 100);
+            $(".pic2").fadeOut(100);
+            $(".pic2").fadeIn(100);
+            if(z <= 0){
+        　　 $("#fx").text("勝利！");
+            $("#ex").text("気絶");
+            $(".pic2").fadeOut(200)
+            $("#play-button6").get(0).play();
+            $("#gx").text("ギャラドスを捕まえた！");
+            }
+            });
+            $("#gx").delay(1400).queue(function(){
+            z -=30;
+            $("#ex").text(z).dequeue();
+            $("#gx").text("ピカチュウの回し蹴り").dequeue();
+            $(".pic1").animate({left: "+=5%"}, 100);
+            $(".pic1").animate({left: "-=5%"}, 100);
+            $(".pic2").fadeOut(100);
+            $(".pic2").fadeIn(100);
+            if(z <= 0){
+        　　 $("#fx").text("勝利！");
+            $("#ex").text("気絶");
+            $(".pic2").fadeOut(200)
+            $("#play-button6").get(0).play();
+            $("#gx").text("ギャラドスを捕まえた！");
+            }
+            });
             }
             if(y <= 0){
-            z *=0;
         　　 $("#fx").text("負け");
-        　　 }
-            if(z <= 0){
-            z *=0;
-        　　 $("#fx").text("勝利！");
+        　　 $(".pic1").fadeOut(200)
+        　　 $("#gx").text("目の前が真っ暗になった…");
         　　 }
         })
     })
