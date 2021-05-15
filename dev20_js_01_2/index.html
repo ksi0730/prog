@@ -71,7 +71,7 @@
             z -=0;
             $("#ex").text(z);
             $("#gx").text("ピカチュウは外した");
-            y -=10;
+            y -=20;
             $("#fx").delay(1000).text(y);
             $("#gx").delay(1000).text("ギャラドスの反撃");
             $(".pic2").animate({left: "-=5%"}, 600);
@@ -88,17 +88,18 @@
             $(".pic2").fadeIn(200)
             $("#play-button2").get(0).play();
             }
-            if(y < 0){
-            z *=0;
+            if(y <= 0){
         　　 $("#fx").text("負け");
             $(".pic1").fadeOut(200)
+            $("#gx").text("目の前が真っ暗になった…");
         　　 }
-            if(z < 0){
+            if(z <= 0){
             z *=0;
         　　 $("#fx").text("勝利！");
             $("#ex").text("気絶");
             $(".pic2").fadeOut(200)
             $("#play-button6").get(0).play();
+            $("#gx").text("ギャラドスを捕まえた！");
         　　 }
         })
     })
@@ -124,7 +125,7 @@
             $("#play-button3").get(0).play();
             }
             if(random === 2){
-            y -=30;
+            y -=50;
             $("#fx").text(y);
             $("#gx").text("ギャラドスの破壊光線");
             $(".pic2").animate({left: "-=5%"}, 600);
@@ -135,17 +136,18 @@
             $(".pic1").fadeIn(200)
             $("#play-button4").get(0).play();
             }
-            if(y < 0){
-            z *=0;
+            if(y <= 0){
         　　 $("#fx").text("負け");
         　　 $(".pic1").fadeOut(200)
+        　　 $("#gx").text("目の前が真っ暗になった…");
         　　 }
-        　　 if(z < 0){
+        　　 if(z <= 0){
             z *=0;
         　　 $("#fx").text("勝利！");
             $("#ex").text("黒焦げ");
             $(".pic2").fadeOut(200)
             $("#play-button6").get(0).play();
+            $("#gx").text("ギャラドスを捕まえた！");
         　　 }
         })
     })
@@ -168,11 +170,11 @@
             $(".pic2").animate({left: "+=5%"}, 600);
             $("#play-button4").get(0).play();
             }
-            if(y < 0){
+            if(y <= 0){
             z *=0;
         　　 $("#fx").text("負け");
         　　 }
-            if(z < 0){
+            if(z <= 0){
             z *=0;
         　　 $("#fx").text("勝利！");
         　　 }
