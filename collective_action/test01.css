@@ -1,0 +1,38 @@
+.all {
+    background-color: black;
+}
+
+.contents {
+    background-color:black;
+    top: 200px;
+}
+
+#head {
+    text-align: center;
+    font-size: 76px;
+    color:white;
+}
+
+#clock {
+    text-align: center;
+    font-size: 96px;
+    color:white;
+}
+
+#push {
+    text-align: center;
+}
+
+#push button {
+    font-size: 76px;
+}
+
+.sum_day {
+    font-size: 56px;
+    color:white;
+}
+
+#list {
+    font-size: 56px;
+    color: white;
+}
