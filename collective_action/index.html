@@ -15,10 +15,10 @@
     <div id="push">
         <form>
           <input type="text" id="name" placeholder="Name" style="font-size: 56PX"> 
-          <input type="text" id='divide' placeholder="Date of Seperation" style="font-size: 56PX">  
+          <input type="number" id='divide' placeholder="Date of Seperation" style="font-size: 56PX">  
           <input type="button" id="start" value="Add" style="font-size: 56PX; color: red;">
-          <p class="sum_day">0People</p>
-          <p class="sum_day2">0Day</p>
+          <!-- <p class="sum_day">0People</p> -->
+          <!-- <p class="sum_day2">0Day</p> -->
           <table id="list"></table>
         </form>
     </div>
@@ -28,13 +28,15 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>    
     var x = -1
-    
+    // var totalsum = 0
+    var day = 0
+
     $(function () {
         var sec = 0;
         var min = 0;
         var hour = 0;  
         var day  = 0;
-        var year = 0;
+        // var year = 0;
         var timer;
 
   // スタート
@@ -70,18 +72,18 @@
   }
 
   function sum2() {
-       totalsum = 0
+       var totalsum = 0
        for(let i=0; i<localStorage.length; i++){
        const key = localStorage.key(i);
        const value = localStorage.getItem(key)
        var calculated_total_sum = 0;
-       var totalsum = +value 
+       totalsum += Number(value) 
+      //  y = totalsum
+       day = totalsum
        $(".sum_day2").text(totalsum + "Day");
-       console.log(value)
+       console.log(day)
       }
-  };
-  
-  
+    }
 
   function countup()
   {
@@ -102,19 +104,19 @@
       day += 1;
     }
 
-    if (day > 364) {
-      day = 0;
-      year += 1;
-    }
+    // if (day > 364) {
+      // day -= 364;
+      // year += 1;
+    // }
 
     // 0埋め
     sec_number = ('0' + sec).slice(-2);
     min_number = ('0' + min).slice(-2);
     hour_number = ('0' + hour).slice(-2);
-    day_number = ('0' + day).slice(-3);
-    year_number = ('0' + year).slice(-2);
+    day_number = ('0' + day).slice(-7);
+    // year_number = ('0' + year).slice(-2);
 
-    $('#clock').html(year_number + ':' + day_number + ':' + hour_number + ':' +  min_number + ':' + sec_number);
+    $('#clock').html(day_number + ':' + hour_number + ':' +  min_number + ':' + sec_number);
   }
 })
 
