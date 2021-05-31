@@ -1,0 +1,65 @@
+.all {
+    background-color:black;
+}
+
+.contents {
+    background-color:black;
+    top: 200px;
+}
+
+#head {
+    text-align: center;
+    font-size: 76px;
+    color:white;
+}
+
+#clock {
+    text-align: center;
+    font-size: 96px;
+    color:white;
+}
+
+#push {
+    text-align: center;
+}
+
+#push button {
+    font-size: 76px;
+}
+
+.sum_day {
+    font-size: 56px;
+    color:white;
+}
+
+.sum_day2 {
+    font-size: 56px;
+    color:white;
+}
+
+#list {
+    font-size: 56px;
+    color: white;
+}
+
+
+table {
+    margin: 20px 3%;
+    border: 1px solid white;
+    width: 96%;
+    text-align: center;
+  }
+  
+th {
+    width: 30%;
+    font-size: 24px;
+    color:white;
+    border-color: white;
+    border-bottom: 1px solid white;
+  }
+  
+td {
+    font-size: 16px;
+    border-bottom: 1px solid white;
+    border-left: 1px solid white;
+  }
