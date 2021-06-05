@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="test01.css">
+    <title>Collective</title>
+</head>
+
+<body class="all">
+  <div class="contents">
+    <div id="head">Collective Action</div>
+    <div id="push">
+        <form>
+          <input type="text" id="name" placeholder="Invitation Code" style="font-size: 56PX">
+          <input type="button" id="start" value="join" style="font-size: 56PX; color: red;" onclick="window.open('index.html', null, 'width=500,toolbar=yes,menubar=yes,scrollbars=yes')">
+        </form>
+    </div>
+    <div style="text-align: center;">
+    <br>
+    <p id="player"></p>
+    </div>
+  </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script> 
+      var tag = document.createElement('script');
+          tag.src = "https://www.youtube.com/iframe_api";
+          var firstScriptTag = document.getElementsByTagName('script')[0];
+          firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+           
+      function onYouTubeIframeAPIReady() {
+          ytPlayer = new YT.Player('player', {
+          videoId: 'fwb-WqwoD94',
+        });
+      }
+      $(function(){
+        $("#start").click(function(){
+          ytPlayer.playVideo();
+          $("#name").val("");
+        })
+      })
+    </script> 
+
+</body>
+</html>
