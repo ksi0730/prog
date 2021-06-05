@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="test01.css">
-    <title>Collective</title>
+    <title>Time</title>
 </head>
 
 <body class="all">
@@ -33,19 +33,30 @@
     let newPostRef = firebase.database().ref();
 
     var x = -1
-    var day = 0
+    // var day = 0
 
     $(function () {
         var sec = 0;
         var min = 0;
         var hour = 0;  
-        var day  = 0;
+        var day = 0; 
         var timer;
+
+  $(document).ready( function(){
+    newPostRef.on("child_added", function(data){
+      const v = data.val();
+      const k = data.key;
+      let result = 0
+      result = v.divide
+      console.log(result)
+      day += Number(result)
+    });
+  });
 
   // スタート
   $('#start').click(function() {
-    var day2 = $("#divide").val();
-    day += Number(day2)
+    // var day2 = $("#divide").val();
+    // day += Number(day2)
     // console.log(day)
 
     newPostRef.push({ 
@@ -60,7 +71,10 @@
       const k = data.key;
       const html = '<tr><th>'+v.name+'</th><td>'+v.divide+'</td></tr>';
       $("#list").append(html);
-      // day = Number(v.divide) 
+      // let result = 0
+      // result = v.divide
+      // console.log(result)
+      // day += Number(result)
     });
     x += 1;
     $('#clock').html('00:00:00:00:00');
