@@ -1,0 +1,11 @@
+.top{
+    text-align: center;
+}
+
+.around{
+    border: 4px solid;
+}
+
+.one{
+    display:flex;
+}
