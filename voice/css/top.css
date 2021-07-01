@@ -1,0 +1,22 @@
+.container-fluid {
+    width: 100%;
+    background-color:black
+}
+
+.second {
+    width: 100%;
+    text-align: center;
+}
+
+.voices {
+    background-color: whitesmoke;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    color: red;
+  }
